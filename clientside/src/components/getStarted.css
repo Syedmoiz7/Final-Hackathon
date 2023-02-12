@@ -1,11 +1,13 @@
 .Cont {
     display: flex;
     justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
 .Card {
     width: 430px;
-    height: 100vh;
+    height: 600px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -15,4 +17,42 @@
     backdrop-filter: blur(25px);
     border-radius: 35px;
 
+}
+
+.logo {
+    width: 250px;
+    margin-bottom: 30px;
+    /* height: 263.2px; */
+}
+
+h1 {
+    color: #61B846;
+    margin: 10px
+}
+
+h4 {
+    color: #024F9D;
+    margin: 10px
+}
+
+.getStartedBtn{
+    width: 170px;
+    height: 50px;
+    border-radius: 15px;
+    border: none;
+    background-color: #61B846;
+    color: white;
+    margin-top: 50px;
+    font-size: large;
+    font-weight: 600;
+    letter-spacing: 1px;
+    box-shadow: 0px 4px 4px 5px #D4D3D3;
+    
+}
+
+.getStartedBtn:hover {
+    cursor: pointer;
+    /* background-color: #1d9bf0 ;
+    color: white;
+    border: none; */
 }

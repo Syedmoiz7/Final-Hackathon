@@ -119,12 +119,12 @@ function Render() {
           null
       }
 
-      {
+      {/* {
         (state.isLogin === false) ?
           ""
           :
           null
-      }
+      } */}
 
 
       {(state.isLogin === true) ?
