@@ -1,0 +1,18 @@
+.Cont {
+    display: flex;
+    justify-content: center;
+}
+
+.Card {
+    width: 430px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #FFFFFF;
+    box-shadow: 0px 2px 12px 3px #61B846;
+    backdrop-filter: blur(25px);
+    border-radius: 35px;
+
+}
