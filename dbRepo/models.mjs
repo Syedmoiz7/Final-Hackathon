@@ -11,6 +11,7 @@ let tweetSchema = new mongoose.Schema({
     //  commentText: String
     // }],
     isDeleted: { type: Boolean, default: false },
+    isAdmin: { type: Boolean, default: false },
     createdOn: { type: Date, default: Date.now }
 });
 

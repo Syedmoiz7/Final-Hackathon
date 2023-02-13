@@ -15,6 +15,8 @@ import ChangePassword from "./changePassword"
 import ForgetPassword from "./forgetPassword"
 import GetStarted from "./getStarted"
 import DiscountStore from "./userDiscountStore"
+import AllProducts from "./adminAllProducts.jsx"
+
 
 import { get } from 'mongoose';
 
@@ -118,12 +120,24 @@ function Render() {
       }
 
 
-      {(state.isLogin === true) ?
+      {(state.isLogin === true && state.user.isAdmin === false ) ?
 
         <Routes>
           <Route path="/" element={<DiscountStore />} />
-          <Route path="/profile" element={<Profile />} />
-          <Route path="/change-password" element={<ChangePassword />} />
+          {/* <Route path="/profile" element={<Profile />} />
+          <Route path="/change-password" element={<ChangePassword />} /> */}
+          <Route path="*" element={
+            <Navigate to="/" replace={true} />
+          } />
+        </Routes>
+        :
+        null
+      }
+      
+      {(state.isLogin === true && state.user.isAdmin === true ) ?
+
+        <Routes>
+          <Route path="/" element={<AllProducts />} />
           <Route path="*" element={
             <Navigate to="/" replace={true} />
           } />

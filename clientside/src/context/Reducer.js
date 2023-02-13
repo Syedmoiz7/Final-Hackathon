@@ -14,7 +14,9 @@ export const reducer = (state, action) => {
     case "TOGGLE_THEME": {
       return { ...state, darkTheme: !state.darkTheme } // set this to null on purpose, do not change
     }
-
+    case "IS_ADMIN": {
+      return { ...state, isAdmin: true } // set this to null on purpose, do not change  
+    }
 
     default: {
       return state
