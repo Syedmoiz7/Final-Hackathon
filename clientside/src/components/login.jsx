@@ -45,13 +45,17 @@ function Login() {
 
         <div className='mainCont'>
 
-            <div className="heading">
+            {/* <div className="heading">
                 <h1>Login</h1>
-            </div>
+            </div> */}
 
             <div>
                 <form onSubmit={loginHandler}>
                     <div className='form'>
+
+                        <h1>SAYLANI WELFARE</h1>
+                        <h4>ONLINE DISCOUNT STORE</h4>
+
                         <input type="email" name="email" className="inputs"
                             id="un" placeholder="Email"
                             onChange={(e) => { setEmail(e.target.value) }} />
@@ -65,15 +69,18 @@ function Login() {
                         <button type='submit' className='btn'>
                             Login
                         </button>
-
-                        <p>Don't have an account? </p>
-                        <Link to={'/signup'} className="signupbtn" >Signup</Link>
-
+                        
                         <br />
 
                         <button className='forget'>
                             <Link className='forgetlink' to={'/forget-password'}>Forgot Password ?</Link>
-                            </button>
+                        </button>
+
+                        <p>Don't have an account? </p>
+                        <Link to={'/signup'} className="signupbtn" >Signup</Link>
+
+
+                        
 
 
                     </div>

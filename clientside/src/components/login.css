@@ -27,43 +27,52 @@ body{
 }
 
 .form{
-    background-color: white;
-    width: 300px;
+
     text-align: center;
     font-size: large;
-    /* height: 100%; */
-    padding: 30px 0 ;
-    /* box-shadow: 0px 0px 5px ; */
+    padding-top: 30px;
+    padding-bottom: 30px;
+    width: 430px;
+    background: #FFFFFF;
+    box-shadow: 0px 2px 12px 3px #e4e4e4;
+    backdrop-filter: blur(25px);
+    border-radius: 10px;
+}
+
+.form>h4 {
+    color: #024F9D;
+    margin-bottom: 20px;
 }
 
 .btn{
     width: 200px;
     height: 40px;
-    background-color: white ;
+    background-color: #61B846 ;
     margin-top: 10px;
     border-radius: 5px;
     font-size: large;
-    color: black;
+    color: white;
     border: none;
-    border: 1px solid rgb(0, 0, 0, 0.2);
+    box-shadow: 0px 4px 4px 5px #D4D3D3;
+    /* border: 1px solid rgb(0, 0, 0, 0.2); */
 
 }
 
 .btn:hover {
     cursor: pointer;
-    background-color: #1d9bf0 ;
+    /* background-color: #1d9bf0 ;
     color: white;
-    border: none;
+    border: none; */
 }
 
 .signupbtn {
     text-decoration: none;
-    color: #1d9bf0;
+    color: #024F9D;
 }
 
 .signupbtn:hover {
     text-decoration: underline;
-    color: #1d9bf0;
+    color: #024F9D;
 }
 
 p {

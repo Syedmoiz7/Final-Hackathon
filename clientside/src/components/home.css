@@ -58,7 +58,7 @@ body {
     margin-top: 8px;
   } */
 
-.alignCenter {
+/* .alignCenter {
   display: flex;
   justify-content: center;
 }
@@ -139,7 +139,6 @@ body {
   height: 60px;
   padding-left: 70px;
   padding-right: 10px;
-  /* border: 1px solid black; */
   
 
 }
@@ -148,10 +147,6 @@ input:focus {
 outline: none;
 }
 
-.tweetInput {
-  /* border: 1px solid black; */
-  /* height: 100px; */
-}
 
 hr {
   width: 410px;
@@ -168,21 +163,16 @@ hr {
 
 input::placeholder {
   font-size: larger;
-  /* padding-top: 10px; */
 }
 
 .icons {
   color: #1d9bf0;
-  /* margin: 5px; */
   padding-left: 20px;
-  /* height: 30px; */
   font-size: larger;
-  /* border: 1px solid black; */
 }
 
 .iconsContainer {
   padding-left: 30px;
-  /* border: 1px solid black; */
 }
 
 .image-upload{
@@ -190,7 +180,6 @@ input::placeholder {
   justify-content: space-around;
   align-items: center;
   margin-bottom: 20px;
-  /* border: 1px solid black; */
 
 }
 
@@ -218,10 +207,9 @@ input::placeholder {
   justify-content: center;
   margin-bottom: 30px;
   margin-left: 40px;
-  /* border: 1px solid black; */
 
 }
 
 .prevImage {
   border-radius: 10px;
-}
+} */

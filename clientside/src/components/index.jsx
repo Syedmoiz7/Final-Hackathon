@@ -14,6 +14,8 @@ import Signup from "./signup"
 import ChangePassword from "./changePassword"
 import ForgetPassword from "./forgetPassword"
 import GetStarted from "./getStarted"
+import DiscountStore from "./userDiscountStore"
+
 import { get } from 'mongoose';
 
 
@@ -106,31 +108,20 @@ function Render() {
 
     <div className= {` ${(state.isLogin === true) ? "Lit" : "Dark"} `}>
 
-      {
-        (state.isLogin === true) ?
-          <div className='navbar'>
-            <ul>
-              <li> <Link to={'/'}>Home</Link></li>
-              <li> <Link to={'/profile'}>Profile</Link></li>
-            </ul>
-            <div> {state?.user?.firstName} <button onClick={logutHandler}>Logout</button></div>
-          </div>
-          :
-          null
-      }
+      
 
-      {/* {
+      {
         (state.isLogin === false) ?
           ""
           :
           null
-      } */}
+      }
 
 
       {(state.isLogin === true) ?
 
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<DiscountStore />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/change-password" element={<ChangePassword />} />
           <Route path="*" element={
@@ -151,6 +142,19 @@ function Render() {
         </Routes>
         :
         null
+      }
+
+{
+        (state.isLogin === true) ?
+          <div className='navbar'>
+            <ul>
+              <li> <Link to={'/'}>Discount Store</Link></li>
+              <li> <Link to={'/profile'}>Profile</Link></li>
+            </ul>
+            <div> {state?.user?.firstName} <button onClick={logutHandler}>Logout</button></div>
+          </div>
+          :
+          null
       }
 
       {(state.isLogin === null) ?

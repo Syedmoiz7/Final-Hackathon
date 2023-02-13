@@ -14,6 +14,7 @@ function Signup() {
     const [name, setName] = useState("")
     // const [lastName, setLastName] = useState("")
     const [email, setEmail] = useState("")
+    const [contact, setContact] = useState("")
     const [password, setPassword] = useState("")
 
     const [result, setResult] = useState("")
@@ -41,16 +42,26 @@ function Signup() {
 
     return (
         <div className="mainContainer">
-            
-            <div className="heading">
+
+            {/* <div className="heading">
                 <h1>Sign Up</h1>
-            </div>
+            </div> */}
+
 
             <form onSubmit={signupHandler}>
                 <div className="formSignup">
+
+                    <h1>SAYLANI WELFARE</h1>
+                    <h4>ONLINE DISCOUNT STORE</h4>
+
                     <input type="text" className="inputs" name="name"
-                        placeholder="Name" required
+                        placeholder="Full Name" required
                         onChange={(e) => { setName(e.target.value) }} />
+                    <br />
+
+                    <input type="number" className="inputs" name="contact"
+                        placeholder="Contact" required
+                        onChange={(e) => { setContact(e.target.value) }} />
                     <br />
 
                     <input type="email" className="inputs" name="email"
@@ -63,15 +74,11 @@ function Signup() {
                         onChange={(e) => { setPassword(e.target.value) }} />
                     <br />
 
-                    <input type="password" className="inputs" name="password"
-                        placeholder="Confirm Password" required />
-                    <br />
-
                     <button type="submit" className='btn'>Sign Up</button>
 
                     <p>Already have an account?</p>
 
-                    <Link className="loginLink" to={'/'}>Login</Link>
+                    <Link className="loginLink" to={'/login'}>Login</Link>
 
                 </div>
             </form>
