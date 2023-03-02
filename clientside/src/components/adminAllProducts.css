@@ -2,13 +2,18 @@
     width: 410px;
     display: flex;
     flex-direction: column;
-    justify-content: start ;
+    justify-content: flex-start ;
     align-items: center;
     background: #FFFFFF;
     box-shadow: 0px 2px 12px 3px #e4e4e4;
     backdrop-filter: blur(25px);
     border-radius: 10px;
     padding: 20px;
+}
+
+.adminHeading {
+    color: #024F9D;
+    margin: 0px
 }
 
 .headerr {
@@ -24,10 +29,5 @@
 
 h2 {
     color: #61B846;
-    margin: 0px
-}
-
-h3 {
-    color: #024F9D;
     margin: 0px
 }

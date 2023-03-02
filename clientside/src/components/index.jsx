@@ -14,7 +14,7 @@ import Signup from "./signup"
 import ChangePassword from "./changePassword"
 import ForgetPassword from "./forgetPassword"
 import GetStarted from "./getStarted"
-import DiscountStore from "./userDiscountStore"
+import DiscountStore from "./userDiscountStore.jsx"
 import AllProducts from "./adminAllProducts.jsx"
 
 
@@ -48,103 +48,76 @@ function Render() {
 
   }
 
-  useEffect(() => {
+  const getProfile = async () => {
 
-    const getProfile = async () => {
+    try {
+      let response = await axios.get(`${state.baseUrl}/profile`, {
+        withCredentials: true
+      })
 
-      try {
-        let response = await axios.get(`${state.baseUrl}/profile`, {
-          withCredentials: true
-        })
+      dispatch({
+        type: "USER_LOGIN",
+        payload: response.data
+      })
+    } catch (error) {
 
-        dispatch({
-          type: "USER_LOGIN",
-          payload: response.data
-        })
-      } catch (error) {
-
-        console.log("error: ", error);
-        dispatch({
-          type: "USER_LOGOUT"
-        })
-      }
-
-
+      console.log("error: ", error);
+      dispatch({
+        type: "USER_LOGOUT"
+      })
     }
-    getProfile()
-  }, []);
+
+
+  }
 
   useEffect(() => {
-    
-    // Add a request interceptor
-    axios.interceptors.request.use(function (config) {
-      // Do something before request is sent
-      console.log("interceptor");
-      config.withCredentials = true
-      return config;
-    }, function (error) {
-      // Do something with request error
-      return Promise.reject(error);
-    });
+    getProfile()
+  }, [state.isLogin]);
 
-    // Add a response interceptor
-    axios.interceptors.response.use(function (response) {
-      // Any status code that lie within the range of 2xx cause this function to trigger
-      // Do something with response data
-      return response;
-    }, function (error) {
-      // Any status codes that falls outside the range of 2xx cause this function to trigger
-      // Do something with response error
+  // useEffect(() => {
 
-      if (error.response.status === 401) {
-        dispatch({
-          type: "USER_LOGOUT"
-        })
-      } 
-      return Promise.reject(error);
-    });
-  }, [])
+  //   // Add a request interceptor
+  //   axios.interceptors.request.use(function (config) {
+  //     // Do something before request is sent
+  //     console.log("interceptor");
+  //     config.withCredentials = true
+  //     return config;
+  //   }, function (error) {
+  //     // Do something with request error
+  //     return Promise.reject(error);
+  //   });
+
+  //   // Add a response interceptor
+  //   axios.interceptors.response.use(function (response) {
+  //     // Any status code that lie within the range of 2xx cause this function to trigger
+  //     // Do something with response data
+  //     return response;
+  //   }, function (error) {
+  //     // Any status codes that falls outside the range of 2xx cause this function to trigger
+  //     // Do something with response error
+
+  //     if (error.response.status === 401) {
+  //       dispatch({
+  //         type: "USER_LOGOUT"
+  //       })
+  //     }
+  //     return Promise.reject(error);
+  //   });
+  // }, [])
 
 
   return (
 
-    <div className= {` ${(state.isLogin === true) ? "Lit" : "Dark"} `}>
+    <div className={` ${(state.isLogin === true) ? "Lit" : "Dark"} `}>
 
-      
 
+      {/* 
       {
         (state.isLogin === false) ?
           ""
           :
           null
-      }
-
-
-      {(state.isLogin === true && state.user.isAdmin === false ) ?
-
-        <Routes>
-          <Route path="/" element={<DiscountStore />} />
-          {/* <Route path="/profile" element={<Profile />} />
-          <Route path="/change-password" element={<ChangePassword />} /> */}
-          <Route path="*" element={
-            <Navigate to="/" replace={true} />
-          } />
-        </Routes>
-        :
-        null
-      }
-      
-      {(state.isLogin === true && state.user.isAdmin === true ) ?
-
-        <Routes>
-          <Route path="/" element={<AllProducts />} />
-          <Route path="*" element={
-            <Navigate to="/" replace={true} />
-          } />
-        </Routes>
-        :
-        null
-      }
+      } */}
 
       {(state.isLogin === false) ?
         <Routes>
@@ -158,15 +131,38 @@ function Render() {
         null
       }
 
-{
+
+      {(state.isLogin === true && state.user.isAdmin === undefined) ?
+        <div>
+          <Routes>
+            <Route path="/" element={<DiscountStore />} />
+            <Route path="/profile" element={<Profile />} />
+            <Route path="/change-password" element={<ChangePassword />} />
+            <Route path="*" element={
+              <Navigate to="/" replace={true} />
+            } />
+          </Routes>
+        </div>
+        :
+        null
+      }
+
+      {(state.isLogin === true && state.user.isAdmin === true) ?
+        <div>
+          <Routes>
+            <Route path="/" element={<AllProducts />} />
+            <Route path="*" element={
+              <Navigate to="/" replace={true} />
+            } />
+          </Routes>
+        </div>
+        :
+        null
+      }
+
+      {
         (state.isLogin === true) ?
-          <div className='navbar'>
-            <ul>
-              <li> <Link to={'/'}>Discount Store</Link></li>
-              <li> <Link to={'/profile'}>Profile</Link></li>
-            </ul>
-            <div> {state?.user?.firstName} <button onClick={logutHandler}>Logout</button></div>
-          </div>
+          <div> {state?.user?.firstName} <button onClick={logutHandler}>Logout</button></div>
           :
           null
       }

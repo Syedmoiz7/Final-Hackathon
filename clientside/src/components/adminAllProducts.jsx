@@ -163,7 +163,7 @@ function AllProducts() {
                     <div className="AllProducts">
                         <h2>Mr. Ahmed</h2>
 
-                        <h3>Admin</h3>
+                        <h3 className='adminHeading'>Admin</h3>
                     </div>
 
                     <div className="cartIcon">

@@ -9,6 +9,10 @@ import { GlobalContext } from '../context/Context';
 import InfiniteScroll from 'react-infinite-scroller';
 import Carticon from './Images/Carticon.png'
 import Grocery from './Images/Grocery.png'
+import Meat from './Images/Rectangle 17.png'
+import Fish from './Images/Rectangle 20.png'
+import Qeema from './Images/Rectangle 23.png'
+import AddToCart from './Images/Rectangle 2.png'
 import HomeIcon from '@mui/icons-material/Home';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import PersonIcon from '@mui/icons-material/Person';
@@ -168,15 +172,91 @@ function DiscountStore() {
                     </div>
                 </div>
 
-                <div className='grocery'>
-                    <img src={Grocery} width={400} alt="" />
-                </div>
+                <div className="scrollable">
 
-                <div className="footer">
-                    <HomeIcon className="iconss" fontSize="large" />
-                    <ShoppingCartIcon className="iconss"  fontSize="large" />
-                    <PersonIcon className="iconss"  fontSize="large" />
-                    
+                    <div className='grocery'>
+                        <img src={Grocery} width={400} alt="" />
+                    </div>
+
+                    <div className="pg1Products">
+                        <div className="productBox">
+                            <div className="meatImg">
+                            <img src={Meat} alt="" />
+                            </div>
+
+                            <div className="prodDescription">
+                                <div className="namePrice">
+                                    <h4> Meat </h4>
+                                    <h4> Rs.800-per kg </h4>
+                                </div>
+
+                                <div className="shortDescription">
+                                    <p>
+                                        1 kg red meat
+                                    </p>
+
+                                    <img src={AddToCart} alt="" />
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <div className="productBox">
+                            <div className="meatImg">
+                            <img src={Fish} alt="" />
+                            </div>
+
+                            <div className="prodDescription">
+                                <div className="namePrice">
+                                    <h4> Fish </h4>
+                                    <h4> Rs.450-per kg </h4>
+                                </div>
+
+                                <div className="shortDescription">
+                                    <p>
+                                        1 kg Fish
+                                    </p>
+
+                                    <img src={AddToCart} alt="" />
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <div className="productBox">
+                            <div className="meatImg">
+                            <img src={Qeema} alt="" />
+                            </div>
+
+                            <div className="prodDescription">
+                                <div className="namePrice">
+                                    <h4> Beef Qeema </h4>
+                                    <h4> Rs.800-per kg </h4>
+                                </div>
+
+                                <div className="shortDescription">
+                                    <p>
+                                        1 kg Beef Qeema
+                                    </p>
+
+                                    <img src={AddToCart} alt="" />
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div className="footer">
+                        <HomeIcon className="iconss" fontSize="large" />
+                        <ShoppingCartIcon className="iconss" fontSize="large" />
+                        <PersonIcon className="iconss" fontSize="large" />
+
+
+                    </div>
 
                 </div>
 

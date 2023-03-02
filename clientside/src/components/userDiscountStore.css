@@ -6,10 +6,11 @@
     justify-content: center;
     /* border: 1px solid black; */
 }
-.alignCenter {
 
+.alignCenter {
+    /* border: 1px solid black; */
     width: 410px;
-    /* height: 600px; */
+    height: 500px;
     display: flex;
     flex-direction: column;
     /* justify-content: start ; */
@@ -19,6 +20,7 @@
     backdrop-filter: blur(25px);
     border-radius: 10px;
     padding: 20px;
+
 
 }
 
@@ -43,20 +45,84 @@ h5 {
     /* border: 1px solid black; */
 }
 
+.scrollable {
+    overflow-y: auto;
+    overflow-x: hidden;
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    margin-bottom: 40px;
+
+}
+
+.scrollable::-webkit-scrollbar {
+    display: none;
+}
+
+.productBox {
+    display: flex;
+    margin-top: 20px;
+    /* border: 1px solid black; */
+}
+
+.prodDescription {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 10px;
+    /* border: 1px solid black; */
+
+}
+
+.namePrice {
+    display: flex;
+    justify-content: space-between;
+    /* border: 1px solid black; */
+    width: 270px;
+    margin-left: 10px;
+}
+
+.namePrice>h4 {
+    color: black;
+}
+
+.shortDescription  {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* border: 1px solid black; */
+    margin-top: 5px;    
+}
+
+.shortDescription > p {
+    margin-left: 15px;
+    margin-top: 0px;
+}
+
+.shortDescription > img {
+    width: 50px;
+}
+
 .grocery {
     margin-top: 10px;
     display: flex;
-    align-self: center;
-    
+    justify-content: center;
+
     /* border: 1px solid black; */
 }
 
 .footer {
-    /* border: 1px solid black; */
-    margin-top: 20px;
+    margin-top: 0;
     display: flex;
+    align-items: center;
     justify-content: space-around;
     color: #61B846;
+    background-color: white;
+    width: 100%;
+    height: 50px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
 
 }
 
@@ -118,9 +184,9 @@ h5 {
     border: 1px solid black;
 
 
-} */
+}
 
-input:focus {
+*/ input:focus {
     outline: none;
 }
 
